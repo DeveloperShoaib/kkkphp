@@ -85,7 +85,7 @@ if(isset($_POST['save']) ){
          $errors['phone']="Phone invalid num ber";
         }
 
-    /* if errors → stop and go back to form */
+    
     if(!empty($errors)){
         $_SESSION['errors'] = $errors;
         $_SESSION['old'] = $_POST; //first time dala huva galat  data which is wrong ye store hoga dobara dikane ke liye 
@@ -93,25 +93,25 @@ if(isset($_POST['save']) ){
         exit;
     }
 
-    //image upload
+    
     $old_img = $_POST['old_image'];//v user ki purani files aayegi 
     $file_name = $_FILES['image']['name']; // new file upload hone ke liye
 
     if(isset($_POST['remove_image']) && $_POST['remove_image'] == "1"){
 
-    // keep old image as it is
+    
     $folder = " ";
 
 } else {
 
-    // checkbox NOT checked → normal upload
+    
 
     if($file_name != ""){
         $folder = "uploadimage/".$file_name;
         $temp_name = $_FILES['image']['tmp_name'];
         move_uploaded_file($temp_name,$folder);
     } else {
-        $folder = $old_img;  // no new image uploaded → keep old
+        $folder = $old_img; 
     }
 
 }

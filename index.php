@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let deletesms = confirm(" delete this record?");
 
             if (deletesms) {
-                // delete allowed
+                 
                 window.location.href = "helper.php?delete=" + id;
             } 
-            // else kuch nahi karega
+            // else
         });
     });
 
